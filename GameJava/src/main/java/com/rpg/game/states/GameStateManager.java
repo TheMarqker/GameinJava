@@ -36,7 +36,7 @@ public class GameStateManager {
         if(state == PLAY) {
             states.add(new PlayState(this));
         }
-        if(states == MENU) {
+        if(state == MENU) {
             states.add(new MenuState(this));
         }
         if(state == PAUSE) {
@@ -45,6 +45,11 @@ public class GameStateManager {
         if(state == GAMEOVER) {
             states.add(new GameOverState(this));
         }
+    }
+
+    public void addAndpop(int state) {
+        states.remove(0);
+        add(state);
     }
 
     public void update() {
